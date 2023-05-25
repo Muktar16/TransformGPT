@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    console.log(values);
     try {
       setLoading(true);
       const formData = new FormData();
@@ -27,15 +26,14 @@ const Login = () => {
       if (values.remember) {
         localStorage.setItem('token', response?.data?.access_token);
         navigate('/');
+        
       } else {
         sessionStorage.setItem('token', response?.data?.access_token);
         navigate('/');
       }
     } catch (error) {
       console.log(error);
-      //   if(error?.response?.status===500) message.error("Incorrect Email.");
-      //   else if(error?.response?.status===401) message.error("Incorrect password.");
-      //   else message.error("Server not responding....");
+      message.error(error?.response?.data?.detail || "Server not responding.....");
     } finally {
       setLoading(false);
     }

@@ -17,7 +17,7 @@ const SignUp = () => {
         navigate('/signin');
     } catch (error) {
         console.log(error)
-        message.error('Something Went Wrong')
+        message.error(error?.response?.data?.detail);
     }finally{
         setLoading(false);
     }
@@ -36,7 +36,7 @@ const SignUp = () => {
         style={{ width: 400, padding: 20, background: '#f5f5f5', borderRadius: 8 }}
       >
         <Title level={2} style={{ color: 'green', textAlign: 'center', marginBottom: 24 }}>
-            Sing Up
+            Sign Up
           </Title>
         <Form.Item
             className='custom-form-item'
