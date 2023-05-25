@@ -1,0 +1,15 @@
+.input-box {
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    height: 40px;
+    width: 98%;
+}
+
+.custom-form-item {
+    background-color: #eeeded;
+    border: 1px solid #e4dede;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
