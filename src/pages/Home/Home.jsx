@@ -14,7 +14,6 @@ const Home = () => {
   const [isVerifiedToken, setIsVerifiedToken] = useState(true);
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
-  const [message,setMessage] = useState('');
   const [index,setIndex] = useState(-1);
   const [result,setResult] = useState('');
 
@@ -29,7 +28,7 @@ const Home = () => {
           setIsVerifiedToken(true);
         }
       } catch (error) {
-        message.error('Login session Expired. Please login again.');
+        //message.error('Login session Expired. Please login again.');
         localStorage.removeItem('token');
         sessionStorage.removeItem('token');
         setIsVerifiedToken(false);
